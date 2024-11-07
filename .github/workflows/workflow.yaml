@@ -1,0 +1,36 @@
+name: Continuos Integration
+
+on: [pull_request, push, issue, issue_coments]
+
+jobs:
+  continuous-integration:
+  runs-on: ubuntu-latest
+
+  steps:
+  -uses: actions/checkout@v3
+  -name: Using Node.js
+  uses: actions/setup-node@v2
+  with:
+      node-version: 16.16.0
+  -name: run install, and test
+  run: |
+      corepack enable
+      yarn install
+  
+name: Start api
+run: yarn dev &
+
+name: Install K6
+run: sudo apt-get update
+          sudo apt-get install -y k6
+
+-name: Run performance tests with K6
+run: |
+      k6 run signup.js
+      k6 run signup-load.js
+      k6 run signup-smoke.js
+      k6 run signup-stress.js
+
+
+
+
