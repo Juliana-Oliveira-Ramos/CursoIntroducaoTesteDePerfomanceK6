@@ -1,8 +1,6 @@
 # Introdução aos testes de performance com k6
 
-<h1 align="left">
-    <img src=".github/logo-stiker.svg" width="250px">
-</h1>
+##Curso gratuito e ministrado pelo Fernando Papito sobre como realizar testes de performance com a ferramenta k6 em uma api localmente e utilizando banco de dados nao relacional mongo db.
 
 # User API
 
@@ -60,5 +58,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feito com 💜 &nbsp;por Fernando Papito 
+
 
